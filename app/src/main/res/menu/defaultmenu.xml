@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="utf-8"?>
+<menu xmlns:android="http://schemas.android.com/apk/res/android">
+
+    <group android:id="@+id/group_client_action">
+        <item android:id="@+id/menu_client_details"
+            android:title="View Customer Details" />
+        <item android:id="@+id/menu_client_order"
+            android:title="Take New Order" />
+        <item android:id="@+id/menu_client_history"
+            android:title="View Transaction History" />
+    </group>
+
+    <group android:id="@+id/group_user">
+        <item android:id="@+id/menu_user_profile"
+            android:title="My Profile" />
+        <item android:id="@+id/menu_user_logout"
+            android:title="Sign Out" />
+    </group>
+</menu>
