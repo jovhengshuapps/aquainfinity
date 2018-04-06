@@ -10,13 +10,10 @@ import android.view.ViewGroup;
 import android.widget.Button;
 
 import com.ericalarcon.basicframework.Templates.BFMenu;
+import com.ericalarcon.basicframework.Templates.BFMenuItem;
 import com.ericalarcon.basicframework.Templates.NavigationActivity;
 
 public class RootFragment extends Fragment {
-
-//    Button buttonSignIn;
-
-
 
     ViewGroup fragmentView;
     Context fragmentContext;
@@ -66,23 +63,58 @@ public class RootFragment extends Fragment {
 
     private void castViews(){
 
-        Button btnSignIn = (Button) fragmentView.findViewById(R.id.buttonSignin);
-        btnSignIn.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View view) {
 
-                DefaultPageFragment defaultPageFragment = new DefaultPageFragment(fragmentContext);
-
-                MainActivity nav =((MainActivity)getActivity());
-                nav.pushFragment(defaultPageFragment,NavigationActivity.animationType.RIGHT_TO_LEFT,false);
-
-//                ((MainActivity)fragmentContext).pushFragment(defaultPageFragment, NavigationActivity.animationType.RIGHT_TO_LEFT, true);
-            }
-        });
+        BFMenu menu1 = new BFMenu();
 
 
-        MainActivity nav =((MainActivity)getActivity());
-        //nav.replaceActionBarMenu(new BFMenu());
+        menu1.addItem(new BFMenuItem("View Customer Details",
+                R.mipmap.dummy_file_icon,
+                BFMenuItem.BFMenuItemType.SHOW_AS_MENUITEM,
+                new BFMenuItem.BFMenuItemListener() {
+                    @Override
+                    public void onClick() {
+
+                    }
+                }));
+        menu1.addItem(new BFMenuItem("Take New Order",
+                R.mipmap.dummy_file_icon,
+                BFMenuItem.BFMenuItemType.SHOW_AS_MENUITEM,
+                new BFMenuItem.BFMenuItemListener() {
+                    @Override
+                    public void onClick() {
+
+                    }
+                }));
+        menu1.addItem(new BFMenuItem("View Transaction History",
+                R.mipmap.dummy_file_icon,
+                BFMenuItem.BFMenuItemType.SHOW_AS_MENUITEM,
+                new BFMenuItem.BFMenuItemListener() {
+                    @Override
+                    public void onClick() {
+
+                    }
+                }));
+        menu1.addItem(new BFMenuItem("My Profile",
+                R.mipmap.dummy_file_icon,
+                BFMenuItem.BFMenuItemType.SHOW_AS_MENUITEM,
+                new BFMenuItem.BFMenuItemListener() {
+                    @Override
+                    public void onClick() {
+
+                    }
+                }));
+        menu1.addItem(new BFMenuItem("Sign Out",
+                R.mipmap.dummy_file_icon,
+                BFMenuItem.BFMenuItemType.SHOW_AS_MENUITEM,
+                new BFMenuItem.BFMenuItemListener() {
+                    @Override
+                    public void onClick() {
+
+                    }
+                }));
+
+        MainActivity main = (MainActivity) fragmentContext;
+        main.replaceActionBarMenu(menu1);
     }
 
 }

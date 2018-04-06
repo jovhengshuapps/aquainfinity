@@ -5,85 +5,405 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:background="@drawable/aqua_bg">
+    android:background="@drawable/aqua_bg_named">
 
-    <LinearLayout
-        android:id="@+id/linearLayout"
-        android:layout_width="0dp"
-        android:layout_height="wrap_content"
-        android:minHeight="150dp"
-        android:background="@android:color/white"
-        android:orientation="vertical"
-        android:weightSum="3"
-        android:paddingTop="20dp"
-        android:paddingBottom="20dp"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent">
+    <View android:layout_height="match_parent" android:layout_width="match_parent"
+        android:background="@color/color40White"/>
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
 
-        <TextView
-            android:id="@+id/textView3"
+        <ScrollView
             android:layout_width="match_parent"
-            android:layout_height="0dp"
-            android:layout_weight="0.8"
-            android:gravity="center"
-            android:padding="4dp"
-            android:text="Morbi non leo aliquet, eleifend lectus quis, pharetra lectus pellentesque" />
+            android:layout_height="match_parent"
+            android:layout_alignParentTop="true"
+            android:layout_above="@+id/buttonNewOrder"
+            android:layout_marginBottom="20dp">
 
-        <LinearLayout
-            android:layout_width="match_parent"
-            android:layout_height="0dp"
-            android:layout_weight="1.2"
-            android:padding="10dp">
-
-
-            <Button
-                android:id="@+id/buttonSignin"
+            <LinearLayout
                 android:layout_width="match_parent"
-                android:layout_height="match_parent"
-                android:background="#3d4753"
-                android:gravity="center"
-                android:padding="10dp"
-                android:text="Sign in"
-                android:textColor="@android:color/white" />
+                android:layout_height="wrap_content"
+                android:orientation="vertical">
 
-        </LinearLayout>
+                <RelativeLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:background="@color/color80White"
+                    android:padding="15dp">
+                    <TextView
+                        android:id="@+id/label_store"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="STORE:"
+                        android:textSize="10sp"
+                        android:layout_alignParentLeft="true"
+                        android:layout_alignBaseline="@+id/value_store"/>
+                    <TextView
+                        android:id="@+id/value_store"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="Juan's Merchandise"
+                        android:textSize="18sp"
+                        android:layout_alignParentTop="true"
+                        android:layout_alignLeft="@id/value_nickname"
+                        android:layout_toLeftOf="@+id/rlt_forimage"/>
+
+                    <TextView
+                        android:id="@+id/label_fullname"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="FULL NAME:"
+                        android:textSize="10sp"
+                        android:layout_alignParentLeft="true"
+                        android:layout_alignBaseline="@+id/value_fullname"/>
+                    <TextView
+                        android:id="@+id/value_fullname"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="Juan dela Cruz"
+                        android:textSize="18sp"
+                        android:layout_below="@+id/value_store"
+                        android:layout_alignLeft="@id/value_nickname"
+                        android:layout_toLeftOf="@+id/rlt_forimage"/>
+
+                    <TextView
+                        android:id="@+id/label_nickname"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="NICK NAME:"
+                        android:textSize="10sp"
+                        android:layout_alignParentLeft="true"
+                        android:layout_alignBaseline="@+id/value_nickname"/>
+                    <TextView
+                        android:id="@+id/value_nickname"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="Juan"
+                        android:textSize="18sp"
+                        android:layout_below="@+id/value_fullname"
+                        android:layout_toRightOf="@+id/label_nickname"
+                        android:layout_toLeftOf="@+id/rlt_forimage"
+                        android:layout_marginLeft="15dp"
+                        android:layout_marginRight="15dp"/>
+
+                    <TextView
+                        android:id="@+id/label_contact"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="CONTACT:"
+                        android:textSize="10sp"
+                        android:layout_alignParentLeft="true"
+                        android:layout_alignBaseline="@+id/value_contact"/>
+                    <TextView
+                        android:id="@+id/value_contact"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="09123456789 / 09987654321"
+                        android:textSize="18sp"
+                        android:layout_below="@+id/value_nickname"
+                        android:layout_alignLeft="@id/value_nickname"
+                        android:layout_toLeftOf="@+id/rlt_forimage"/>
+                    <TextView
+                        android:id="@+id/label_address"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="ADDRESS:"
+                        android:textSize="10sp"
+                        android:layout_alignParentLeft="true"
+                        android:layout_alignBaseline="@+id/value_address"/>
+                    <TextView
+                        android:id="@+id/value_address"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="#10 San Marcos St., Banga 1st, Plaridel, Bulacan, 3016"
+                        android:textSize="18sp"
+                        android:lines="3"
+                        android:maxLines="3"
+                        android:layout_below="@+id/value_contact"
+                        android:layout_alignLeft="@id/value_nickname"
+                        android:layout_toLeftOf="@+id/rlt_forimage"/>
+
+                    <RelativeLayout
+                        android:id="@+id/rlt_forimage"
+                        android:layout_width="70dp"
+                        android:layout_height="match_parent"
+                        android:background="@android:color/darker_gray"
+                        android:layout_alignParentTop="true"
+                        android:layout_alignParentRight="true">
 
 
-        <TextView
-            android:id="@+id/textViewSignUp"
+
+                    </RelativeLayout>
+                </RelativeLayout>
+
+                <View android:layout_width="match_parent" android:layout_height="2dp"
+                    android:background="@android:color/black"/>
+
+                <RelativeLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginLeft="50dp"
+                    android:layout_marginRight="50dp"
+                    android:padding="15dp">
+
+                    <TextView
+                        android:id="@+id/header_title"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="Balances as of Dec 19, 2017"
+                        android:textSize="20sp"
+                        android:layout_marginBottom="15dp"
+                        android:gravity="center"
+                        android:layout_alignParentLeft="true"
+                        android:layout_alignParentTop="true"
+                        android:layout_alignParentRight="true"/>
+
+                    <View
+                        android:id="@+id/view_bar_line"
+                        android:layout_width="match_parent" android:layout_height="4dp"
+                        android:background="@android:color/black"
+                        android:layout_marginBottom="15dp"
+                        android:layout_alignParentLeft="true"
+                        android:layout_below="@id/header_title"
+                        android:layout_alignParentRight="true"/>
+
+
+                    <LinearLayout
+                        android:id="@+id/lt_outstanding_amount"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:orientation="horizontal"
+                        android:weightSum="1"
+                        android:layout_marginBottom="15dp"
+                        android:layout_alignParentLeft="true"
+                        android:layout_below="@id/view_bar_line"
+                        android:layout_alignParentRight="true">
+
+                        <TextView
+                            android:layout_width="0dp"
+                            android:layout_weight="0.5"
+                            android:gravity="center"
+                            android:layout_height="wrap_content"
+                            android:text="Outstanding Amount:"/>
+
+
+                        <TextView
+                            android:id="@+id/value_outstanding_amount"
+                            android:layout_width="0dp"
+                            android:layout_weight="0.5"
+                            android:gravity="center"
+                            android:text="1234567890"
+                            android:layout_height="wrap_content" />
+
+
+                    </LinearLayout>
+
+
+                    <LinearLayout
+                        android:id="@+id/lt_product_value_header"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:orientation="horizontal"
+                        android:weightSum="1"
+                        android:layout_marginBottom="15dp"
+                        android:layout_alignParentLeft="true"
+                        android:layout_below="@id/lt_outstanding_amount"
+                        android:layout_alignParentRight="true">
+
+                        <TextView
+                            android:layout_width="0dp"
+                            android:layout_height="wrap_content"
+                            android:layout_weight="0.5"
+                            android:background="#666a1693"
+                            android:gravity="center"
+                            android:text="PRODUCT" />
+
+
+                        <TextView
+                            android:layout_width="0dp"
+                            android:layout_weight="0.5"
+                            android:gravity="center"
+                            android:text="VALUE"
+                            android:layout_height="wrap_content"
+                            android:background="#666a1693" />
+
+
+                    </LinearLayout>
+
+                    <LinearLayout
+                        android:id="@+id/lt_row_slim"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:orientation="horizontal"
+                        android:weightSum="1"
+                        android:layout_marginBottom="15dp"
+                        android:layout_alignParentLeft="true"
+                        android:layout_below="@id/lt_product_value_header"
+                        android:layout_alignParentRight="true">
+
+                        <TextView
+                            android:layout_width="0dp"
+                            android:layout_weight="0.5"
+                            android:gravity="center"
+                            android:layout_height="wrap_content"
+                            android:text="Slim"
+                            android:background="@color/color40White"/>
+
+
+                        <TextView
+                            android:layout_width="0dp"
+                            android:layout_weight="0.5"
+                            android:gravity="center"
+                            android:text="4"
+                            android:layout_height="wrap_content"
+                            android:background="@drawable/white_details_top" />
+
+
+                    </LinearLayout>
+
+
+                    <LinearLayout
+                        android:id="@+id/lt_row_bottle500"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:orientation="horizontal"
+                        android:weightSum="1"
+                        android:layout_marginBottom="15dp"
+                        android:layout_alignParentLeft="true"
+                        android:layout_below="@id/lt_row_slim"
+                        android:layout_alignParentRight="true">
+
+                        <TextView
+                            android:layout_width="0dp"
+                            android:layout_weight="0.5"
+                            android:gravity="center"
+                            android:layout_height="wrap_content"
+                            android:text="per Bottle (500ml)"
+                            android:background="@drawable/white_details_top"/>
+
+
+                        <TextView
+                            android:layout_width="0dp"
+                            android:layout_weight="0.5"
+                            android:gravity="center"
+                            android:text="20"
+                            android:layout_height="wrap_content"
+                            android:background="@drawable/white_details_top" />
+
+
+                    </LinearLayout>
+
+                    <LinearLayout
+                        android:id="@+id/lt_row_bottle1000"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:orientation="horizontal"
+                        android:weightSum="1"
+                        android:layout_marginBottom="15dp"
+                        android:layout_alignParentLeft="true"
+                        android:layout_below="@id/lt_row_bottle500"
+                        android:layout_alignParentRight="true">
+
+                        <TextView
+                            android:layout_width="0dp"
+                            android:layout_weight="0.5"
+                            android:gravity="center"
+                            android:layout_height="wrap_content"
+                            android:text="per Bottle (1L)"
+                            android:background="@drawable/white_details_top"/>
+
+
+                        <TextView
+                            android:layout_width="0dp"
+                            android:layout_weight="0.5"
+                            android:gravity="center"
+                            android:text="2"
+                            android:layout_height="wrap_content"
+                            android:background="@drawable/white_details_top" />
+
+
+                    </LinearLayout>
+
+                    <LinearLayout
+                        android:id="@+id/lt_row_gallon50"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:orientation="horizontal"
+                        android:weightSum="1"
+                        android:layout_marginBottom="15dp"
+                        android:layout_alignParentLeft="true"
+                        android:layout_below="@id/lt_row_bottle1000"
+                        android:layout_alignParentRight="true">
+
+                        <TextView
+                            android:layout_width="0dp"
+                            android:layout_weight="0.5"
+                            android:gravity="center"
+                            android:layout_height="wrap_content"
+                            android:text="per Gallon (50)"
+                            android:background="@drawable/white_details_top"/>
+
+
+                        <TextView
+                            android:layout_width="0dp"
+                            android:layout_weight="0.5"
+                            android:gravity="center"
+                            android:text="8"
+                            android:layout_height="wrap_content"
+                            android:background="@drawable/white_details_top" />
+
+
+                    </LinearLayout>
+
+
+                    <LinearLayout
+                        android:id="@+id/lt_row_gallon100"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:orientation="horizontal"
+                        android:weightSum="1"
+                        android:layout_marginBottom="15dp"
+                        android:layout_alignParentLeft="true"
+                        android:layout_below="@id/lt_row_gallon50"
+                        android:layout_alignParentRight="true">
+
+                        <TextView
+                            android:layout_width="0dp"
+                            android:layout_weight="0.5"
+                            android:gravity="center"
+                            android:layout_height="wrap_content"
+                            android:text="per Gallon (100)"
+                            android:background="@drawable/white_details_top"/>
+
+
+                        <TextView
+                            android:layout_width="0dp"
+                            android:layout_weight="0.5"
+                            android:gravity="center"
+                            android:text="2"
+                            android:layout_height="wrap_content"
+                            android:background="@drawable/white_details_top" />
+
+
+                    </LinearLayout>
+
+                </RelativeLayout>
+            </LinearLayout>
+
+        </ScrollView>
+
+        <Button
+            android:id="@+id/buttonNewOrder"
             android:layout_width="match_parent"
-            android:layout_height="0dp"
-            android:layout_weight="0.5"
-            android:gravity="center"
-            android:padding="4dp"
-            android:text="Don't have an account? Sign up here" />
-    </LinearLayout>
+            android:layout_height="wrap_content"
+            android:layout_marginLeft="30dp"
+            android:layout_marginRight="30dp"
+            android:layout_marginBottom="100dp"
+            android:background="#3d4753"
+            android:textColor="#FFFFFF"
+            android:text="Take New Order"
+            android:layout_alignParentBottom="true"/>
 
-    <TextView
-        android:id="@+id/textView"
-        android:layout_width="0dp"
-        android:layout_height="wrap_content"
-        android:layout_marginBottom="8dp"
-        android:gravity="center"
-        android:text="Welcome"
-        android:textColor="@android:color/black"
-        android:textSize="22sp"
-        app:layout_constraintBottom_toTopOf="@+id/linearLayout"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent" />
+    </RelativeLayout>
 
-    <TextView
-        android:id="@+id/textView2"
-        android:layout_width="0dp"
-        android:layout_height="wrap_content"
-        android:layout_marginBottom="8dp"
-        android:gravity="center"
-        android:text="@string/app_name"
-        android:textColor="@android:color/darker_gray"
-        android:textSize="80sp"
-        app:layout_constraintBottom_toTopOf="@+id/textView"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="1.0"
-        app:layout_constraintStart_toStartOf="parent" />
 </android.support.constraint.ConstraintLayout>

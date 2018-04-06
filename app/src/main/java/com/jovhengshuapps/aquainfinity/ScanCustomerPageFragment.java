@@ -17,7 +17,7 @@ import com.ericalarcon.basicframework.Templates.BFMenuItem;
 import com.ericalarcon.basicframework.Templates.NavigationActivity;
 import com.jovhengshuapps.aquainfinity.barcode.BarcodeCaptureActivity;
 
-public class DefaultPageFragment extends Fragment {
+public class ScanCustomerPageFragment extends Fragment {
 
 
 
@@ -26,12 +26,12 @@ public class DefaultPageFragment extends Fragment {
     ViewGroup fragmentView;
     Context fragmentContext;
 
-    public DefaultPageFragment() {
+    public ScanCustomerPageFragment() {
 
     }
 
 
-    public DefaultPageFragment(Context context) {
+    public ScanCustomerPageFragment(Context context) {
         this.fragmentContext = context;
 
     }
@@ -67,65 +67,18 @@ public class DefaultPageFragment extends Fragment {
         btnScan.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                Intent barcodeIntent = new Intent(fragmentContext, BarcodeCaptureActivity.class);
-                startActivityForResult(barcodeIntent, BARCODE_READER_REQUEST_CODE);
+//                Intent barcodeIntent = new Intent(fragmentContext, BarcodeCaptureActivity.class);
+//                startActivityForResult(barcodeIntent, BARCODE_READER_REQUEST_CODE);
+
+                RootFragment rootFragment = new RootFragment(fragmentContext);
+                MainActivity main = (MainActivity) getActivity();
+                main.pushFragment(rootFragment, NavigationActivity.animationType.RIGHT_TO_LEFT,false);
             }
         });
 
 
 
 
-        BFMenu menu1 = new BFMenu();
-
-
-        menu1.addItem(new BFMenuItem("View Customer Details",
-                R.mipmap.dummy_file_icon,
-                BFMenuItem.BFMenuItemType.SHOW_AS_MENUITEM,
-                new BFMenuItem.BFMenuItemListener() {
-                    @Override
-                    public void onClick() {
-
-                    }
-                }));
-        menu1.addItem(new BFMenuItem("Take New Order",
-                R.mipmap.dummy_file_icon,
-                BFMenuItem.BFMenuItemType.SHOW_AS_MENUITEM,
-                new BFMenuItem.BFMenuItemListener() {
-                    @Override
-                    public void onClick() {
-
-                    }
-                }));
-        menu1.addItem(new BFMenuItem("View Transaction History",
-                R.mipmap.dummy_file_icon,
-                BFMenuItem.BFMenuItemType.SHOW_AS_MENUITEM,
-                new BFMenuItem.BFMenuItemListener() {
-                    @Override
-                    public void onClick() {
-
-                    }
-                }));
-        menu1.addItem(new BFMenuItem("My Profile",
-                R.mipmap.dummy_file_icon,
-                BFMenuItem.BFMenuItemType.SHOW_AS_MENUITEM,
-                new BFMenuItem.BFMenuItemListener() {
-                    @Override
-                    public void onClick() {
-
-                    }
-                }));
-        menu1.addItem(new BFMenuItem("Sign Out",
-                R.mipmap.dummy_file_icon,
-                BFMenuItem.BFMenuItemType.SHOW_AS_MENUITEM,
-                new BFMenuItem.BFMenuItemListener() {
-                    @Override
-                    public void onClick() {
-
-                    }
-                }));
-
-        MainActivity main = (MainActivity) fragmentContext;
-        main.replaceActionBarMenu(menu1);
 
     }
 
