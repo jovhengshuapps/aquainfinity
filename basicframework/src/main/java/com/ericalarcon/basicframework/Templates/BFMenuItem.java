@@ -18,6 +18,8 @@ public class BFMenuItem {
     BFMenuItemType menuItemType;
     BFMenuItemListener listener;
 
+    Boolean isDisabled = false;
+
     /**
      * Creates a menu item
      * @param pTitle
@@ -38,6 +40,11 @@ public class BFMenuItem {
 
     public static abstract class BFMenuItemListener{
         public abstract void onClick();
+    }
+
+    public BFMenuItem disabled(Boolean disable) {
+        this.isDisabled = disable;
+        return this;
     }
 }
 

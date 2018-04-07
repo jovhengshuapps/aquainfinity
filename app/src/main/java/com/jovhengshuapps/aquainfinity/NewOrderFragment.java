@@ -3,28 +3,25 @@ package com.jovhengshuapps.aquainfinity;
 import android.app.Fragment;
 import android.content.Context;
 import android.os.Bundle;
-import android.util.Log;
 import android.view.InflateException;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
-import android.widget.Button;
 
 import com.ericalarcon.basicframework.Templates.BFMenu;
 import com.ericalarcon.basicframework.Templates.BFMenuItem;
-import com.ericalarcon.basicframework.Templates.NavigationActivity;
 
-public class RootFragment extends Fragment {
+public class NewOrderFragment extends Fragment {
 
     ViewGroup fragmentView;
     Context fragmentContext;
 
-    public RootFragment() {
+    public NewOrderFragment() {
 
     }
 
 
-    public RootFragment(Context context) {
+    public NewOrderFragment(Context context) {
         this.fragmentContext = context;
 
     }
@@ -45,7 +42,7 @@ public class RootFragment extends Fragment {
                 parent.removeView(fragmentView);
         }
         try {
-            fragmentView = (ViewGroup) localInflater.inflate(R.layout.fragment_root, null, false);
+            fragmentView = (ViewGroup) localInflater.inflate(R.layout.fragment_neworder, null, false);
         } catch (InflateException e) {
 
         }
@@ -71,14 +68,19 @@ public class RootFragment extends Fragment {
         menu1.addItem(new BFMenuItem("View Customer Details",
                 R.mipmap.dummy_file_icon,
                 BFMenuItem.BFMenuItemType.SHOW_AS_MENUITEM,
-                null).disabled(true));
+                new BFMenuItem.BFMenuItemListener() {
+                    @Override
+                    public void onClick() {
+
+                    }
+                }));
         menu1.addItem(new BFMenuItem("Take New Order",
                 R.mipmap.dummy_file_icon,
                 BFMenuItem.BFMenuItemType.SHOW_AS_MENUITEM,
                 new BFMenuItem.BFMenuItemListener() {
                     @Override
                     public void onClick() {
-                        Log.d("TEST","NA CLICK AKO");
+
                     }
                 }));
         menu1.addItem(new BFMenuItem("View Transaction History",
@@ -87,7 +89,7 @@ public class RootFragment extends Fragment {
                 new BFMenuItem.BFMenuItemListener() {
                     @Override
                     public void onClick() {
-                        Log.d("TEST","NA CLICK AKO");
+
                     }
                 }));
         menu1.addItem(new BFMenuItem("My Profile",
@@ -109,27 +111,8 @@ public class RootFragment extends Fragment {
                     }
                 }));
 
-        MainActivity main = (MainActivity) getActivity();
-        //MainActivity main = (MainActivity) fragmentContext;
+        MainActivity main = (MainActivity) fragmentContext;
         main.replaceActionBarMenu(menu1);
-
-
-        main.setTitle("Customer Details");
-
-        Button button = (Button) fragmentView.findViewById(R.id.buttonNewOrder);
-        button.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View view) {
-
-                MainActivity main = (MainActivity) getActivity();
-                NewOrderFragment rootFragment = new NewOrderFragment(fragmentContext);
-                main.pushFragment(rootFragment, NavigationActivity.animationType.RIGHT_TO_LEFT,false);
-            }
-        });
-
-
-
-
     }
 
 }

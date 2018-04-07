@@ -1,0 +1,578 @@
+<?xml version="1.0" encoding="utf-8"?>
+<android.support.constraint.ConstraintLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@drawable/aqua_bg_named">
+
+    <View android:layout_height="match_parent" android:layout_width="match_parent"
+        android:background="@color/color40White"/>
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
+
+        <ScrollView
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:layout_alignParentTop="true"
+            android:layout_above="@+id/buttonNewOrder">
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="vertical">
+
+                <RelativeLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:background="@color/color80White"
+                    android:padding="15dp">
+                    <TextView
+                        android:id="@+id/label_store"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="STORE:"
+                        android:textSize="10sp"
+                        android:layout_alignParentLeft="true"
+                        android:layout_alignBaseline="@+id/value_store"/>
+                    <TextView
+                        android:id="@+id/value_store"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="Juan's Merchandise"
+                        android:textSize="18sp"
+                        android:layout_alignParentTop="true"
+                        android:layout_alignLeft="@id/value_nickname"
+                        android:layout_toLeftOf="@+id/rlt_forimage"/>
+
+                    <TextView
+                        android:id="@+id/label_fullname"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="FULL NAME:"
+                        android:textSize="10sp"
+                        android:layout_alignParentLeft="true"
+                        android:layout_alignBaseline="@+id/value_fullname"/>
+                    <TextView
+                        android:id="@+id/value_fullname"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="Juan dela Cruz"
+                        android:textSize="18sp"
+                        android:layout_below="@+id/value_store"
+                        android:layout_alignLeft="@id/value_nickname"
+                        android:layout_toLeftOf="@+id/rlt_forimage"/>
+
+                    <TextView
+                        android:id="@+id/label_nickname"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="NICK NAME:"
+                        android:textSize="10sp"
+                        android:layout_alignParentLeft="true"
+                        android:layout_alignBaseline="@+id/value_nickname"/>
+                    <TextView
+                        android:id="@+id/value_nickname"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="Juan"
+                        android:textSize="18sp"
+                        android:layout_below="@+id/value_fullname"
+                        android:layout_toRightOf="@+id/label_nickname"
+                        android:layout_toLeftOf="@+id/rlt_forimage"
+                        android:layout_marginLeft="15dp"
+                        android:layout_marginRight="15dp"/>
+
+                    <TextView
+                        android:id="@+id/label_contact"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="CONTACT:"
+                        android:textSize="10sp"
+                        android:layout_alignParentLeft="true"
+                        android:layout_alignBaseline="@+id/value_contact"/>
+                    <TextView
+                        android:id="@+id/value_contact"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="09123456789 / 09987654321"
+                        android:textSize="18sp"
+                        android:layout_below="@+id/value_nickname"
+                        android:layout_alignLeft="@id/value_nickname"
+                        android:layout_toLeftOf="@+id/rlt_forimage"/>
+                    <TextView
+                        android:id="@+id/label_address"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="ADDRESS:"
+                        android:textSize="10sp"
+                        android:layout_alignParentLeft="true"
+                        android:layout_alignBaseline="@+id/value_address"/>
+                    <TextView
+                        android:id="@+id/value_address"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="#10 San Marcos St., Banga 1st, Plaridel, Bulacan, 3016"
+                        android:textSize="18sp"
+                        android:lines="3"
+                        android:maxLines="3"
+                        android:layout_below="@+id/value_contact"
+                        android:layout_alignLeft="@id/value_nickname"
+                        android:layout_toLeftOf="@+id/rlt_forimage"/>
+
+                    <RelativeLayout
+                        android:id="@+id/rlt_forimage"
+                        android:layout_width="70dp"
+                        android:layout_height="match_parent"
+                        android:background="@android:color/darker_gray"
+                        android:layout_alignParentTop="true"
+                        android:layout_alignParentRight="true">
+
+
+
+                    </RelativeLayout>
+                </RelativeLayout>
+
+                <View android:layout_width="match_parent" android:layout_height="2dp"
+                    android:background="@android:color/black"/>
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginLeft="5dp"
+                    android:layout_marginRight="5dp"
+                    android:background="@color/color80White"
+                    android:orientation="vertical"
+                    android:padding="15dp">
+
+                    <RelativeLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:orientation="horizontal">
+
+                        <TextView
+                            android:id="@+id/label_product"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:text="PRODUCT:"
+                            android:textColor="@android:color/holo_red_light"
+                            android:textSize="10sp"
+                            android:textStyle="bold"
+                            android:layout_alignParentLeft="true"
+                            android:layout_alignBaseline="@+id/edit_product"/>
+                        <EditText
+                            android:id="@+id/edit_product"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:textSize="18sp"
+                            android:layout_alignParentTop="true"
+                            android:layout_toRightOf="@id/label_product"
+                            android:layout_alignParentRight="true"/>
+
+                    </RelativeLayout>
+
+                    <RelativeLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:orientation="horizontal">
+
+                        <TextView
+                            android:id="@+id/label_unitprice"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:text="UNITPRICE:"
+                            android:textColor="@android:color/holo_red_light"
+                            android:textSize="10sp"
+                            android:textStyle="bold"
+                            android:layout_alignParentLeft="true"
+                            android:layout_alignBaseline="@+id/edit_unitpress"/>
+                        <EditText
+                            android:id="@+id/edit_unitpress"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:textSize="18sp"
+                            android:layout_alignParentTop="true"
+                            android:layout_toRightOf="@id/label_unitprice"
+                            android:layout_alignParentRight="true"/>
+
+                    </RelativeLayout>
+
+
+                    <RelativeLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:orientation="horizontal">
+
+                        <TextView
+                            android:id="@+id/label_quantity"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:text="QUANTITY:"
+                            android:textColor="@android:color/holo_red_light"
+                            android:textSize="10sp"
+                            android:textStyle="bold"
+                            android:layout_alignParentLeft="true"
+                            android:layout_alignBaseline="@+id/edit_quantity"/>
+                        <EditText
+                            android:id="@+id/edit_quantity"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:textSize="18sp"
+                            android:layout_alignParentTop="true"
+                            android:layout_toRightOf="@id/label_quantity"
+                            android:layout_alignParentRight="true"/>
+
+                    </RelativeLayout>
+
+                    <RelativeLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:orientation="horizontal">
+
+                        <TextView
+                            android:id="@+id/label_return"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:text="QUANTITY:"
+                            android:textColor="@android:color/holo_red_light"
+                            android:textSize="10sp"
+                            android:textStyle="bold"
+                            android:layout_alignParentLeft="true"
+                            android:layout_alignBaseline="@+id/edit_return"/>
+                        <EditText
+                            android:id="@+id/edit_return"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:textSize="18sp"
+                            android:layout_alignParentTop="true"
+                            android:layout_toRightOf="@id/label_return"
+                            android:layout_alignParentRight="true"/>
+
+                    </RelativeLayout>
+
+
+                    <RelativeLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:orientation="horizontal">
+
+                        <TextView
+                            android:id="@+id/label_replacement"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:text="REPLACEMENT:"
+                            android:textColor="@android:color/black"
+                            android:textSize="10sp"
+                            android:layout_alignParentLeft="true"
+                            android:layout_alignBaseline="@+id/edit_replacement"/>
+                        <EditText
+                            android:id="@+id/edit_replacement"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:textSize="18sp"
+                            android:layout_alignParentTop="true"
+                            android:layout_toRightOf="@id/label_replacement"
+                            android:layout_alignParentRight="true"/>
+
+                    </RelativeLayout>
+
+
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="AMOUNT DUES"
+                        android:textColor="@android:color/black"
+                        android:layout_marginTop="20dp"
+                        android:textSize="12sp"
+                        android:textStyle="bold"/>
+
+
+                    <View android:layout_width="match_parent" android:layout_height="2dp"
+                        android:background="@android:color/black"/>
+
+                    <RelativeLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:orientation="horizontal">
+
+                        <TextView
+                            android:id="@+id/label_amountdue"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:text="REPLACEMENT:"
+                            android:textColor="@android:color/black"
+                            android:textSize="10sp"
+                            android:layout_alignParentLeft="true"
+                            android:layout_alignBaseline="@+id/edit_amountdue"/>
+                        <EditText
+                            android:id="@+id/edit_amountdue"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:textSize="18sp"
+                            android:layout_alignParentTop="true"
+                            android:layout_toRightOf="@id/label_amountdue"
+                            android:layout_alignParentRight="true"/>
+
+                    </RelativeLayout>
+
+                    <RelativeLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:orientation="horizontal">
+
+                        <TextView
+                            android:id="@+id/label_promo"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:text="PROMO:"
+                            android:textColor="@android:color/black"
+                            android:textSize="10sp"
+                            android:layout_alignParentLeft="true"
+                            android:layout_alignBaseline="@+id/edit_promo"/>
+                        <EditText
+                            android:id="@+id/edit_promo"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:textSize="18sp"
+                            android:layout_alignParentTop="true"
+                            android:layout_toRightOf="@id/label_promo"
+                            android:layout_alignParentRight="true"/>
+
+                    </RelativeLayout>
+
+                    <RelativeLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:orientation="horizontal">
+
+                        <TextView
+                            android:id="@+id/label_discount"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:text="DISCOUNT:"
+                            android:textColor="@android:color/black"
+                            android:textSize="10sp"
+                            android:layout_alignParentLeft="true"
+                            android:layout_alignBaseline="@+id/edit_discount"/>
+                        <EditText
+                            android:id="@+id/edit_discount"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:textSize="18sp"
+                            android:layout_alignParentTop="true"
+                            android:layout_toRightOf="@id/label_discount"
+                            android:layout_alignParentRight="true"/>
+
+                    </RelativeLayout>
+
+                    <RelativeLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:orientation="horizontal">
+
+                        <TextView
+                            android:id="@+id/label_totalamount"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:text="DISCOUNT:"
+                            android:textColor="@android:color/black"
+                            android:textSize="10sp"
+                            android:layout_alignParentLeft="true"
+                            android:layout_alignBaseline="@+id/edit_totalamount"/>
+                        <EditText
+                            android:id="@+id/edit_totalamount"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:textSize="18sp"
+                            android:layout_alignParentTop="true"
+                            android:layout_toRightOf="@id/label_totalamount"
+                            android:layout_alignParentRight="true"/>
+
+                    </RelativeLayout>
+
+
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="SALES"
+                        android:textColor="@android:color/black"
+                        android:layout_marginTop="20dp"
+                        android:textSize="12sp"
+                        android:textStyle="bold"/>
+
+
+                    <View android:layout_width="match_parent" android:layout_height="2dp"
+                        android:background="@android:color/black"/>
+
+                    <RelativeLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:orientation="horizontal">
+
+                        <TextView
+                            android:id="@+id/label_receivedcash"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:text="RECEIVED CASH:"
+                            android:textColor="@android:color/holo_red_light"
+                            android:textSize="10sp"
+                            android:layout_alignParentLeft="true"
+                            android:layout_alignBaseline="@+id/edit_receivedcash"/>
+                        <EditText
+                            android:id="@+id/edit_receivedcash"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:textSize="18sp"
+                            android:layout_alignParentTop="true"
+                            android:layout_toRightOf="@id/label_receivedcash"
+                            android:layout_alignParentRight="true"/>
+
+                    </RelativeLayout>
+
+                    <RelativeLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:orientation="horizontal">
+
+                        <TextView
+                            android:id="@+id/label_cashsales"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:text="CASH SALES:"
+                            android:textColor="@android:color/black"
+                            android:textSize="10sp"
+                            android:layout_alignParentLeft="true"
+                            android:layout_alignBaseline="@+id/edit_cashsales"/>
+                        <EditText
+                            android:id="@+id/edit_cashsales"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:textSize="18sp"
+                            android:layout_alignParentTop="true"
+                            android:layout_toRightOf="@id/label_cashsales"
+                            android:layout_alignParentRight="true"/>
+
+                    </RelativeLayout>
+
+                    <RelativeLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:orientation="horizontal">
+
+                        <TextView
+                            android:id="@+id/label_creditsales"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:text="CREDIT SALES:"
+                            android:textColor="@android:color/black"
+                            android:textSize="10sp"
+                            android:layout_alignParentLeft="true"
+                            android:layout_alignBaseline="@+id/edit_creditsales"/>
+                        <EditText
+                            android:id="@+id/edit_creditsales"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:textSize="18sp"
+                            android:layout_alignParentTop="true"
+                            android:layout_toRightOf="@id/label_creditsales"
+                            android:layout_alignParentRight="true"/>
+
+                    </RelativeLayout>
+
+                    <RelativeLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:orientation="horizontal">
+
+                        <TextView
+                            android:id="@+id/label_creditpayment"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:text="DISCOUNT:"
+                            android:textColor="@android:color/black"
+                            android:textSize="10sp"
+                            android:layout_alignParentLeft="true"
+                            android:layout_alignBaseline="@+id/edit_creditpayment"/>
+                        <EditText
+                            android:id="@+id/edit_creditpayment"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:textSize="18sp"
+                            android:layout_alignParentTop="true"
+                            android:layout_toRightOf="@id/label_creditpayment"
+                            android:layout_alignParentRight="true"/>
+
+                    </RelativeLayout>
+
+
+                    <View android:layout_width="match_parent" android:layout_height="2dp"
+                        android:background="@android:color/black"
+                        android:layout_marginTop="20dp"/>
+
+                    <RelativeLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:orientation="horizontal">
+
+                        <TextView
+                            android:id="@+id/label_remarks"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:text="REMARKS:"
+                            android:textColor="@android:color/black"
+                            android:textSize="10sp"
+                            android:layout_alignParentLeft="true"
+                            android:layout_alignBaseline="@+id/edit_remarks"/>
+                        <EditText
+                            android:id="@+id/edit_remarks"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:textSize="18sp"
+                            android:layout_alignParentTop="true"
+                            android:layout_toRightOf="@id/label_remarks"
+                            android:layout_alignParentRight="true"/>
+
+                    </RelativeLayout>
+
+                    <LinearLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:orientation="horizontal"
+                        android:weightSum="1">
+
+                        <Button
+                            android:id="@+id/buttonCancel"
+                            android:layout_width="0dp"
+                            android:layout_weight="0.4"
+                            android:layout_height="match_parent"
+                            android:gravity="center"
+                            android:padding="10dp"
+                            android:text="CANCEL"
+                            android:textColor="#3d4753"/>
+
+                        <View android:layout_weight="0.2" android:layout_width="0dp" android:layout_height="match_parent"/>
+
+                        <Button
+                            android:id="@+id/buttonSubmit"
+                            android:layout_width="0dp"
+                            android:layout_weight="0.4"
+                            android:layout_height="match_parent"
+                            android:background="#3d4753"
+                            android:gravity="center"
+                            android:padding="10dp"
+                            android:text="SUBMIT"
+                            android:textColor="@android:color/white"/>
+
+                    </LinearLayout>
+
+                </LinearLayout>
+            </LinearLayout>
+
+        </ScrollView>
+
+
+    </RelativeLayout>
+
+</android.support.constraint.ConstraintLayout>

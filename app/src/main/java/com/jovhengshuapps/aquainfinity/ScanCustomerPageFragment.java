@@ -77,6 +77,8 @@ public class ScanCustomerPageFragment extends Fragment {
         });
 
 
+        MainActivity main = (MainActivity) getActivity();
+        main.setTitle("Scan Customer QR");
 
 
 

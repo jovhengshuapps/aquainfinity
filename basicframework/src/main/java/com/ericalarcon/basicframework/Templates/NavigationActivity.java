@@ -561,16 +561,19 @@ public abstract class NavigationActivity extends AppCompatActivity implements Se
                 currentItem.setShowAsActionFlags(MenuItem.SHOW_AS_ACTION_COLLAPSE_ACTION_VIEW);
             }
 
+
             currentItem.setIcon(item.icon);
 
             //setup click listener, that must be implemented by the BFMenuItem when creating it
-            currentItem.setOnMenuItemClickListener(new MenuItem.OnMenuItemClickListener() {
-                @Override
-                public boolean onMenuItemClick(MenuItem menuItem) {
-                    item.listener.onClick(); //abstract method
-                    return false;
-                }
-            });
+            if(item.isDisabled == false) {
+                currentItem.setOnMenuItemClickListener(new MenuItem.OnMenuItemClickListener() {
+                    @Override
+                    public boolean onMenuItemClick(MenuItem menuItem) {
+                        item.listener.onClick(); //abstract method
+                        return false;
+                    }
+                });
+            }
 
         }
 
