@@ -4,6 +4,7 @@ import android.app.Fragment;
 import android.content.Context;
 import android.content.Intent;
 import android.os.Bundle;
+import android.util.Log;
 import android.view.InflateException;
 import android.view.LayoutInflater;
 import android.view.Menu;
@@ -11,10 +12,13 @@ import android.view.MenuInflater;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.Button;
+import android.widget.Toast;
 
 import com.ericalarcon.basicframework.Templates.BFMenu;
 import com.ericalarcon.basicframework.Templates.BFMenuItem;
 import com.ericalarcon.basicframework.Templates.NavigationActivity;
+import com.google.android.gms.common.api.CommonStatusCodes;
+import com.google.android.gms.vision.barcode.Barcode;
 import com.jovhengshuapps.aquainfinity.barcode.BarcodeCaptureActivity;
 
 public class ScanCustomerPageFragment extends Fragment {
@@ -67,12 +71,12 @@ public class ScanCustomerPageFragment extends Fragment {
         btnScan.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-//                Intent barcodeIntent = new Intent(fragmentContext, BarcodeCaptureActivity.class);
-//                startActivityForResult(barcodeIntent, BARCODE_READER_REQUEST_CODE);
+                Intent barcodeIntent = new Intent(fragmentContext, BarcodeCaptureActivity.class);
+                startActivityForResult(barcodeIntent, BARCODE_READER_REQUEST_CODE);
 
-                RootFragment rootFragment = new RootFragment(fragmentContext);
-                MainActivity main = (MainActivity) getActivity();
-                main.pushFragment(rootFragment, NavigationActivity.animationType.RIGHT_TO_LEFT,false);
+//                RootFragment rootFragment = new RootFragment(fragmentContext);
+//                MainActivity main = (MainActivity) getActivity();
+//                main.pushFragment(rootFragment, NavigationActivity.animationType.RIGHT_TO_LEFT,false);
             }
         });
 
@@ -82,6 +86,38 @@ public class ScanCustomerPageFragment extends Fragment {
 
 
 
+    }
+
+    @Override
+    public void onActivityResult(int requestCode, int resultCode, Intent data) {
+        if (requestCode == BARCODE_READER_REQUEST_CODE) {
+            if (resultCode == CommonStatusCodes.SUCCESS) {
+                if (data != null) {
+                    Barcode barcode = data.getParcelableExtra(BarcodeCaptureActivity.BarcodeObject);
+
+                    Toast.makeText(fragmentContext, "barcode: " + barcode.displayValue,
+                            Toast.LENGTH_LONG).show();
+
+                    RootFragment rootFragment = new RootFragment(fragmentContext);
+                    MainActivity main = (MainActivity) getActivity();
+                    main.pushFragment(rootFragment, NavigationActivity.animationType.RIGHT_TO_LEFT,false);
+
+//                    val barcode = data.getParcelableExtra<Barcode>(BarcodeCaptureActivity.BarcodeObject)
+//                            val p = barcode.cornerPoints
+//                    mResultTextView.text = barcode.displayValue
+                } else {
+
+                    Toast.makeText(fragmentContext, String.format(getString(R.string.no_barcode_captured)),
+                            Toast.LENGTH_LONG).show();
+                }
+            } else {
+
+                Toast.makeText(fragmentContext, String.format(getString(R.string.barcode_error_format),
+                        CommonStatusCodes.getStatusCodeString(resultCode)),
+                        Toast.LENGTH_LONG).show();
+            }
+        } else
+            super.onActivityResult(requestCode, resultCode, data);
     }
 
 

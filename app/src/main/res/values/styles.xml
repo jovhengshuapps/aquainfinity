@@ -10,6 +10,10 @@
         <item name="windowNoTitle">true</item>
         <item name="android:actionMenuTextColor">#fff</item><!--replace color-->
         <item name="android:textColorSecondary">#fff</item><!--replace color-->
+        <item name="actionMenuTextAppearance">@style/MenuAppearance</item>
     </style>
 
+    <style name="MenuAppearance">
+        <item name="android:background">@color/colorMenuBg</item>
+    </style>
 </resources>
