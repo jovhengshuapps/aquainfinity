@@ -7,6 +7,10 @@ import android.view.InflateException;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
+import android.view.WindowManager;
+import android.view.inputmethod.InputMethodManager;
+import android.widget.Button;
+import android.widget.ScrollView;
 
 import com.ericalarcon.basicframework.Templates.BFMenu;
 import com.ericalarcon.basicframework.Templates.BFMenuItem;
@@ -72,6 +76,8 @@ public class NewOrderFragment extends Fragment {
                     @Override
                     public void onClick() {
 
+                        MainActivity main = (MainActivity) fragmentContext;
+                        main.pop();
                     }
                 }));
         menu1.addItem(new BFMenuItem("Take New Order",
@@ -113,6 +119,36 @@ public class NewOrderFragment extends Fragment {
 
         MainActivity main = (MainActivity) fragmentContext;
         main.replaceActionBarMenu(menu1);
+
+
+        Button buttonCancel = (Button) fragmentView.findViewById(R.id.buttonCancel);
+        buttonCancel.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                MainActivity main = (MainActivity) fragmentContext;
+                hideKeyboard(main);
+            }
+        });
+
+
     }
 
+    @Override
+    public void onDestroy() {
+        super.onDestroy();
+        MainActivity main = (MainActivity) fragmentContext;
+        hideKeyboard(main);
+    }
+
+
+    public static void hideKeyboard(MainActivity activity) {
+        InputMethodManager inputManager = (InputMethodManager) activity
+                .getSystemService(Context.INPUT_METHOD_SERVICE);
+
+        // check if no view has focus:
+        View currentFocusedView = activity.getCurrentFocus();
+        if (currentFocusedView != null) {
+            inputManager.hideSoftInputFromWindow(currentFocusedView.getWindowToken(), InputMethodManager.HIDE_NOT_ALWAYS);
+        }
+    }
 }

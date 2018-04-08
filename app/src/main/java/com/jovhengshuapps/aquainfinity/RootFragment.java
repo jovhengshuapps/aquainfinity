@@ -78,7 +78,10 @@ public class RootFragment extends Fragment {
                 new BFMenuItem.BFMenuItemListener() {
                     @Override
                     public void onClick() {
-                        Log.d("TEST","NA CLICK AKO");
+
+                        RootFragment rootFragment = new RootFragment(fragmentContext);
+                        MainActivity main = (MainActivity) getActivity();
+                        main.pushFragment(rootFragment, NavigationActivity.animationType.RIGHT_TO_LEFT,false);
                     }
                 }));
         menu1.addItem(new BFMenuItem("View Transaction History",
