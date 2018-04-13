@@ -1,0 +1,193 @@
+<?xml version="1.0" encoding="utf-8"?>
+<android.support.constraint.ConstraintLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@drawable/aqua_bg_named">
+
+    <View android:layout_height="match_parent" android:layout_width="match_parent"
+        android:background="@color/color40White"/>
+
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
+
+        <ScrollView
+            android:id="@+id/scrollViewMainNewCustomer"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:layout_above="@+id/buttonNewOrder"
+            android:layout_alignParentTop="true">
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="vertical">
+
+                <RelativeLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:background="@color/color80White"
+                    android:padding="15dp">
+
+                    <TextView
+                        android:id="@+id/label_fname"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="FIRSTNAME:"
+                        android:textSize="10sp"
+                        android:layout_alignParentLeft="true"
+                        android:layout_alignBaseline="@+id/edit_text_fname"/>
+
+                    <EditText
+                        android:id="@+id/edit_text_fname"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:hint="FIRSTNAME"
+                        android:textSize="22sp"
+                        android:layout_alignParentTop="true"
+                        android:layout_toRightOf="@id/label_fname"
+                        android:layout_toLeftOf="@+id/rlt_forimage"/>
+
+                    <TextView
+                        android:id="@+id/label_lname"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="LASTNAME:"
+                        android:textSize="10sp"
+                        android:layout_alignParentLeft="true"
+                        android:layout_alignBaseline="@+id/edit_text_lname"/>
+
+                    <EditText
+                        android:id="@+id/edit_text_lname"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:hint="LASTNAME"
+                        android:textSize="22sp"
+                        android:layout_below="@+id/edit_text_fname"
+                        android:layout_alignLeft="@id/edit_text_fname"
+                        android:layout_toLeftOf="@+id/rlt_forimage"/>
+
+                    <TextView
+                        android:id="@+id/label_nname"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="NICKNAME:"
+                        android:textSize="10sp"
+                        android:layout_alignParentLeft="true"
+                        android:layout_alignBaseline="@+id/edit_text_nname"/>
+
+                    <EditText
+                        android:id="@+id/edit_text_nname"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:hint="NICKNAME"
+                        android:textSize="22sp"
+                        android:layout_below="@+id/edit_text_lname"
+                        android:layout_alignLeft="@id/edit_text_fname"
+                        android:layout_toLeftOf="@+id/rlt_forimage"/>
+
+
+                    <TextView
+                        android:id="@+id/label_contactnumber"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="CONTACT:"
+                        android:textSize="10sp"
+                        android:layout_alignParentLeft="true"
+                        android:layout_alignBaseline="@+id/edit_text_contactnumber"/>
+
+                    <EditText
+                        android:id="@+id/edit_text_contactnumber"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:hint="CONTACT"
+                        android:textSize="22sp"
+                        android:layout_below="@+id/edit_text_nname"
+                        android:layout_alignLeft="@id/edit_text_fname"
+                        android:layout_toLeftOf="@+id/rlt_forimage"/>
+
+
+                    <TextView
+                        android:id="@+id/label_address_newcustomer"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="ADDRESS:"
+                        android:textSize="10sp"
+                        android:layout_alignParentLeft="true"
+                        android:layout_alignBaseline="@+id/edit_text_address_newcustomer"/>
+
+                    <EditText
+                        android:id="@+id/edit_text_address_newcustomer"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:hint="ADDRESS"
+                        android:textSize="22sp"
+                        android:lines="3"
+                        android:layout_below="@+id/edit_text_contactnumber"
+                        android:layout_alignLeft="@id/edit_text_fname"/>
+
+                    <RelativeLayout
+                        android:id="@+id/rlt_forimageNewCustomer"
+                        android:layout_width="100dp"
+                        android:layout_height="100dp"
+                        android:layout_alignParentRight="true"
+                        android:layout_alignParentTop="true"
+                        android:background="@android:color/darker_gray">
+
+
+                    </RelativeLayout>
+
+                </RelativeLayout>
+
+                <View
+                    android:layout_width="match_parent"
+                    android:layout_height="2dp"
+                    android:background="@android:color/black" />
+
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:orientation="horizontal"
+                    android:weightSum="1"
+                    android:layout_marginTop="40dp">
+
+                    <Button
+                        android:id="@+id/buttonCancelNewCustomer"
+                        android:layout_width="0dp"
+                        android:layout_height="match_parent"
+                        android:layout_weight="0.4"
+                        android:gravity="center"
+                        android:padding="10dp"
+                        android:text="CANCEL"
+                        android:textColor="#3d4753" />
+
+                    <View
+                        android:layout_width="0dp"
+                        android:layout_height="match_parent"
+                        android:layout_weight="0.2" />
+
+                    <Button
+                        android:id="@+id/buttonSubmitNewCustomer"
+                        android:layout_width="0dp"
+                        android:layout_height="match_parent"
+                        android:layout_weight="0.4"
+                        android:background="#3d4753"
+                        android:gravity="center"
+                        android:padding="10dp"
+                        android:text="SUBMIT"
+                        android:textColor="@android:color/white" />
+
+                </LinearLayout>
+
+            </LinearLayout>
+
+        </ScrollView>
+
+
+    </RelativeLayout>
+
+</android.support.constraint.ConstraintLayout>

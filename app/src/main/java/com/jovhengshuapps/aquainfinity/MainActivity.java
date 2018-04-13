@@ -50,24 +50,9 @@ public class MainActivity extends NavigationActivity {
 //
 //                    }
 //                }));
-        menu1.addItem(new BFMenuItem("My Profile",
-                R.mipmap.dummy_file_icon,
-                BFMenuItem.BFMenuItemType.SHOW_AS_MENUITEM,
-                new BFMenuItem.BFMenuItemListener() {
-                    @Override
-                    public void onClick() {
 
-                    }
-                }));
-        menu1.addItem(new BFMenuItem("Sign Out",
-                R.mipmap.dummy_file_icon,
-                BFMenuItem.BFMenuItemType.SHOW_AS_MENUITEM,
-                new BFMenuItem.BFMenuItemListener() {
-                    @Override
-                    public void onClick() {
 
-                    }
-                }));
+
 
 
         this.addActionBarMenu(menu1);

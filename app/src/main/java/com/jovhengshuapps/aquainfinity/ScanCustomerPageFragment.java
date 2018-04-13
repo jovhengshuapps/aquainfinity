@@ -81,10 +81,48 @@ public class ScanCustomerPageFragment extends Fragment {
         });
 
 
-        MainActivity main = (MainActivity) getActivity();
+        final MainActivity main = (MainActivity) getActivity();
         main.setTitle("Scan Customer QR");
 
 
+
+        BFMenu menu1 = new BFMenu();
+        menu1.addItem(new BFMenuItem("Add User",
+                R.drawable.user_plus,
+                /*BFMenuItem.BFMenuItemType.SHOW_AS_ACTION_IF_ROOM,*/
+                BFMenuItem.BFMenuItemType.SHOW_AS_MENUITEM,
+                new BFMenuItem.BFMenuItemListener() {
+                    @Override
+                    public void onClick() {
+
+                        NewCustomerFragment newCustomerFragment = new NewCustomerFragment(fragmentContext);
+                        MainActivity main = (MainActivity) getActivity();
+                        main.pushFragment(newCustomerFragment, NavigationActivity.animationType.RIGHT_TO_LEFT,false);
+                    }
+                }));
+
+
+        menu1.addItem(new BFMenuItem("My Profile",
+                R.mipmap.dummy_file_icon,
+                BFMenuItem.BFMenuItemType.SHOW_AS_MENUITEM,
+                new BFMenuItem.BFMenuItemListener() {
+                    @Override
+                    public void onClick() {
+
+                    }
+                }));
+        menu1.addItem(new BFMenuItem("Sign Out",
+                R.mipmap.dummy_file_icon,
+                BFMenuItem.BFMenuItemType.SHOW_AS_MENUITEM,
+                new BFMenuItem.BFMenuItemListener() {
+                    @Override
+                    public void onClick() {
+                        main.finish();
+                    }
+                }));
+
+
+        main.replaceActionBarMenu(menu1);
 
     }
 
