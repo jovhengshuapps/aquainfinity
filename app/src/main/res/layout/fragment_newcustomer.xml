@@ -129,16 +129,16 @@
                         android:layout_below="@+id/edit_text_contactnumber"
                         android:layout_alignLeft="@id/edit_text_fname"/>
 
-                    <RelativeLayout
-                        android:id="@+id/rlt_forimageNewCustomer"
+                    <ImageView
+                        android:id="@+id/iv_forimageNewCustomer"
                         android:layout_width="100dp"
                         android:layout_height="100dp"
                         android:layout_alignParentRight="true"
                         android:layout_alignParentTop="true"
-                        android:background="@android:color/darker_gray">
+                        android:background="@drawable/profile">
 
 
-                    </RelativeLayout>
+                    </ImageView>
 
                 </RelativeLayout>
 
